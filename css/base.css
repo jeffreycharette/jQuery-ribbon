@@ -1,5 +1,5 @@
 /* 
- * Ribbon v0.1 | 20120925
+ * jQuery ribbon version 0.1.0 | 20120925
  * by Jeff Charette (wearecharette.com)
  * jeffrey@wearecharette.com
  *
