@@ -1,0 +1,294 @@
+/* 
+ * Ribbon v0.1 | 20120925
+ * by Jeff Charette (wearecharette.com)
+ * jeffrey@wearecharette.com
+ *
+ * Copyright (c) 2012 Jeff Charette (wearecharette.com)
+ * Dual licensed under the MIT (MIT-LICENSE.txt)
+ * and GPL (GPL-LICENSE.txt) licenses. 
+ *
+ * NOTE: This script requires jQuery to work.  Download jQuery at www.jquery.com
+ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* remember to define focus styles! */
+/*:focus {
+outline: 0;
+}*/
+
+/* remember to highlight inserts somehow! */
+ins {
+text-decoration: none;
+}
+del {
+text-decoration: line-through;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+background: #efefef;
+color: #333333;
+font-size: 100%;
+font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+line-height: 1.125em;
+text-align: left;
+-webkit-text-size-adjust: none;
+}
+
+/* TAGS */
+h1,h2,h3,h4 {
+color: #333333;
+}
+h1{
+	font-family: 'Helvetica Neue Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-size: 3.0em;
+	font-weight: normal;
+	line-height: 1.05em;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 1);
+}
+h2{
+font-family: 'Helvetica Neue Condensed Bold', 'HelveticaNeue-CondensedBold', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+font-size: 2.2em;
+font-weight: normal;
+line-height: 1.13em;
+margin-bottom: 20px;
+text-shadow: 0 -1px 1px rgba(0, 0, 0, 1);
+}
+h3 {
+color:#333333;
+font-family: 'HelveticaNeue', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+font-size: 1.2em;
+font-weight: bold;
+line-height: 1.1em;
+padding-bottom: 19px;
+}
+h4{
+font-size: 1.2em;
+line-height: 1.1em;
+}
+p {
+font-size: 1em;
+line-height: 1.5em;
+}
+a:link, a:visited, a:active {
+color: #666666;
+text-decoration:none;
+outline: none;
+}
+a:hover, a:focus {
+color: #DF282E;
+}
+a.img:link, a.img:visited, a.img:active, a.img:hover {
+border-width:0;
+}
+input, textarea, select {
+	background: #DCDCDC;
+	border-top:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #DDDDDD;
+	border-bottom:1px solid #DDDDDD;
+	color:#333333;
+	font-family: 'Helvetica Neue', 'HelveticaNeue', Arial, Helvetica, sans-serif;
+	font-size: .875em;
+	font-weight: bold;
+	height: 21px;
+	padding: 2px 7px;
+}
+hr {
+border:0;
+clear: both;
+color: #1A1A1A;
+background-color:#1A1A1A;
+height:2px;
+margin:0 0 15px 0;
+overflow: auto;
+padding:0;
+}
+
+/* BASE CLASSES */
+
+.left {
+float:left;
+}
+.right {
+float: right;
+}
+.clearboth {
+clear: both;
+}
+.strong {
+font-weight: bold;
+}
+.italic {
+font-style: italic;
+}
+.sup {
+vertical-align:top;
+font:.7em/1.9em "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.clear-auto {
+	clear: both;
+	overflow: auto;
+}
+
+/* COLORS */
+
+.red, .error {
+color: #DF282E;
+}
+.white {
+color: #FFFFFF;
+}
+.black {
+color: #333333;
+}
+.grey {
+color: #666666;
+}
+.blue {
+color: #85CCE5;
+}
+.blue {
+color: blue;
+}
+.green {
+color: green;
+}
+.red {
+color: #DF282E;
+}
+
+hgroup.red-wrapper, hgroup.red-wrapper-small,
+hgroup.green-wrapper, hgroup.green-wrapper-small,
+hgroup.blue-wrapper, hgroup.blue-wrapper-small {
+	background: #DF282E;
+	height: 42px;
+	margin-left: -13px;
+	position: absolute;
+}
+hgroup.green-wrapper, hgroup.green-wrapper-small {
+	background: green;
+}
+hgroup.blue-wrapper, hgroup.blue-wrapper-small {
+	background: #85CCE5;
+}
+hgroup.red-wrapper-small, hgroup.green-wrapper-small, hgroup.blue-wrapper-small {
+	height: 38px;
+	margin-left: -7px;
+	overflow: visible !important;
+	position: absolute;
+	width: 10px;
+	top: 20px;
+	z-index: 100;
+}
+hgroup.red-wrapper h1, hgroup.red-wrapper-small h1,
+hgroup.green-wrapper h1, hgroup.green-wrapper-small h1,
+hgroup.blue-wrapper h1, hgroup.blue-wrapper-small h1 {
+	color: #FFFFFF;
+	font-size: 1.35em;
+	letter-spacing: 1px;
+	margin: 9px 25px 0px;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(102, 102, 102, 0.50);
+	white-space: nowrap;
+}
+hgroup.red-wrapper-small h1,
+hgroup.green-wrapper-small h1,
+hgroup.blue-wrapper-small h1 {
+	width: 0px;
+	font-size: 1.25em;
+	margin: 8px 15px 0px;
+	overflow: hidden;
+}
+hgroup.red-wrapper::after, hgroup.red-wrapper-small::after,
+hgroup.green-wrapper::after, hgroup.green-wrapper-small::after,
+hgroup.blue-wrapper::after, hgroup.blue-wrapper-small::after {
+	content: url('images/bg-tab-large-red.png');
+	position: absolute;
+	top: 35px;
+}
+hgroup.green-wrapper::after, hgroup.green-wrapper-small::after {
+	content: url('images/bg-tab-large-green.png');
+}
+hgroup.blue-wrapper::after, hgroup.blue-wrapper-small::after {
+	content: url('images/bg-tab-large-blue.png');
+}
+hgroup.red-wrapper-small::after,
+hgroup.green-wrapper-small::after,
+hgroup.blue-wrapper-small::after {
+	content: url('images/bg-tab-small-red.png');
+	top: 29px;
+}
+hgroup.green-wrapper-small::after {
+	content: url('images/bg-tab-small-green.png');
+}
+hgroup.blue-wrapper-small::after {
+	content: url('images/bg-tab-small-blue.png');
+}
+article {
+	margin: 30px auto;
+	width: 860px;
+}
+.grid a {
+	position: relative;
+	float: left;
+	width: 147px;
+	height: 147px;
+	display: block;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+.grid a img {
+	position: absolute;
+}
